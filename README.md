@@ -1,54 +1,107 @@
-# React + TypeScript + Vite
+# Lista de Tarefas com React, TypeScript e Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação de lista de tarefas (To-Do List) desenvolvida com **React**, **TypeScript** e **Vite**. Ele permite adicionar, marcar como concluídas e remover tarefas, além de alternar entre os temas claro e escuro.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Adicionar novas tarefas.
+- Marcar tarefas como concluídas.
+- Remover tarefas.
+- Persistência de tarefas no **LocalStorage**.
+- Alternar entre os temas **claro** e **escuro**.
 
-## Expanding the ESLint configuration
+## Estrutura do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   ├── App.css
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── ThemeContext.tsx
+│   └── vite-env.d.ts
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tecnologias Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React**: Biblioteca para construção de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
+- **Vite**: Ferramenta de build rápida para desenvolvimento web moderno.
+- **ESLint**: Ferramenta de linting para manter a qualidade do código.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Como Executar o Projeto
+
+### Pré-requisitos
+
+- **Node.js** (versão 16 ou superior)
+- **npm** ou **yarn**
+
+### Passos
+
+1. Clone o repositório:
+
+   ```bash
+   git clone <URL_DO_REPOSITORIO>
+   cd <NOME_DO_REPOSITORIO>
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Acesse a aplicação no navegador em: [http://localhost:5173](http://localhost:5173)
+
+## Scripts Disponíveis
+
+- `npm run dev`: Inicia o servidor de desenvolvimento.
+- `npm run build`: Realiza o build da aplicação para produção.
+- `npm run lint`: Executa o ESLint para verificar problemas no código.
+- `npm run preview`: Visualiza o build de produção localmente.
+
+## Estrutura de Código
+
+### `App.tsx`
+
+O componente principal da aplicação, responsável por gerenciar a lista de tarefas e a interação do usuário.
+
+### `ThemeContext.tsx`
+
+Gerencia o tema da aplicação (claro ou escuro) utilizando o **Context API** do React.
+
+### `App.css`
+
+Estilos da aplicação, incluindo suporte para os temas claro e escuro.
+
+## Melhorias Futuras
+
+- Adicionar suporte a múltiplos idiomas.
+- Implementar testes unitários.
+- Adicionar animações para transições de tema e tarefas.
+
+## Licença
+
+Este projeto é de uso livre e não possui uma licença específica.
+
+---
+
+Desenvolvido com ❤️ por Hugo Zeymer Auad.
